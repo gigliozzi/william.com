@@ -1,0 +1,248 @@
+/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+:root {
+  --color-green: #50fa7b;
+  --color-rocket: #7159c1;
+  --color-deepness: #4c4c4c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #282a36;
+}
+
+header {
+  padding: 32px;
+  border-bottom: 1px solid #333;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  /*estilo do menu superior*/
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 16px;
+  text-decoration: none;
+  text-align: left;
+  font-family: 'Roboto Condensed';
+}
+
+.links a:hover {
+  color: var(--color-green);
+  transition: color 200ms;
+}
+
+#wrapper {
+  color: white;
+  width: 300px;
+  text-align: center;
+  font-family: 'Roboto Condensed';
+  padding: 32px;
+}
+
+#wrapper img {
+  border-radius: 50%;
+  border: 3px solid var(--color-green);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  transform: rotate(0deg);
+  width: 170px;
+}
+
+#wrapper h1 {
+  font-size: 28px;
+  line-height: 45px;
+  font-weight: normal;
+  font-family: 'Roboto Condensed';
+  text-align: center;
+}
+
+#wrapper h2 {
+  font-size: 19px;
+  line-height: 25px;
+  font-weight: normal;
+  font-family: 'Roboto Condensed';
+  text-align: left;
+}
+
+#wrapper p {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: normal;
+  font-family: 'Roboto Condensed';
+  max-width: 500px;
+  margin-top: 10px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  text-align: center;
+}
+
+#wrapper #bio {
+  font-size: 16px;
+  text-align: center;
+  line-height: -10px;
+}
+
+#wrapper #rights {
+  text-align: center;
+  font-size: 16px;
+}
+
+#wrapper a {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Roboto Condensed';
+  text-decoration: none;
+  color: var(--color-green);
+}
+
+.footer-links a {
+  /*estilo do menu inferior*/
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  line-height: 28px;
+  margin: 0 2px;
+}
+
+#footer {
+  height: 150px;
+  margin-top: 250px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Condensed';
+  opacity: 75%;
+}
+
+#footer a {
+  display: block;
+  padding: 5px;
+  margin: 15px 25px 15px 100px;
+  color: white;
+}
+
+.cards {
+  /*  === SECTION CARDS ===   */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 110px;
+  font-family: Roboto Condensed;
+}
+
+@media (min-width: 200px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.individual-card {
+  background-color: var(--color-deepness);
+  cursor: pointer;
+}
+
+.card-title,          /* Professsor:  card-content */
+        .card-description {
+  /* Professor:   card-info */
+  padding: 24px;
+  color: whitesmoke;
+}
+
+.card-image-container img {
+  width: 100%;
+}
+
+.card-description {
+  /* posicionamento com Grid -- card__info do professor */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-description {
+  /* estilização */
+  background-color: var(--color-deepness);
+  vertical-align: middle;
+}
+
+.card-time {
+  padding: 8px;
+}
+
+.card-price {
+  /* preço do card: FREE */
+  background-color: var(--color-deepness);
+  filter: brightness(80%);
+  border-radius: 0px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* === MODAL === */
+.modal-overlay {
+  /* é a película que desfoca o fundo */
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  /* é o popup branco */
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  position: relative;
+}
+
+.modal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* === MODAL ACTIVE=== */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* === IFRAME STYLE=== */
+
+iframe {
+  width: 100%;
+  height: 97%;
+  position: absolute;
+  top: 5%;
+}
+
+/* Observações: 
+        1. Elementos <a href></a> não pegam o estilo text-align: e pelo que vi nem os outros elementos filhos
+        2. É necssário definir os elementos  primários como DIVs para que seus filhos recebam estás properties
+        Ex: 
+        
+        
+        */
